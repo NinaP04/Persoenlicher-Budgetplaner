@@ -2,17 +2,14 @@
 
 ## 📝 Analysis
 
-**Problem**
+**Problem:**
 Als Teilzeit-Student hat man viel zu erledigen und muss den Überblick über Studium, Arbeit und Privatleben behalten. So kann es kommen, dass man den Überblick über seine finanzielle Lage verliert. 
 
-
-**Scenario**
+**Scenario:**
 Durch einen persönlicher Budget-Planner in App-Format kann man ganz einfach und von überall einen Einblick in seine Finanzen erhalten. Auch ist der Budget-Planner individuell anpassbar. 
 
-
-
 **User stories:**
-1. Als User möchte ich, dass die App Passwort geschützt ist. 
+1. Als User möchte ich, dass die App Passwort geschützt **`Test1234`** ist.
 2. Als User möchte ich jederzeit mein Passwort in der App ändern können. 
 3. Als User möchte ich automatisch ausgeloggt werden bei Inaktivität. 
 4. Als User möchte ich, meine Einnahmen und Ausgaben erfassen & anpassen können. 
@@ -22,8 +19,6 @@ Durch einen persönlicher Budget-Planner in App-Format kann man ganz einfach und
 8. Als User möchte ich eine Warnung erhalten, wenn ich mein Budget überschreite. 
 9. Als User möchte ich bei Erreichen eines finanziellen Zieles benachrichtigt werden. 
 10. Als User möchte ich, die Daten vom aktuellen Monat mit denen der Vormonate vergleichen können. 
-
-
 
 **Use cases:**
 - Show Menu (from `menu.txt`)
@@ -45,58 +40,63 @@ Durch einen persönlicher Budget-Planner in App-Format kann man ganz einfach und
 
 
 
-### 2. Validierung von Daten (z.B. Check von Eingabedaten auf Datentyp oder Format) 
+### 2. Validierung von Daten (Check von Eingabedaten auf Datentyp oder Format) 
 
-Passwort:  
+**Passwort:**
 Check von Eingabedate auf true und Komplexitätsvorgaben. Komplexitätsvorgaben für das Passwort sind:  
 - Mind. 8 Zeichen 
 - Gross- und Kleinschreibung 
 - Mind. eine Zahl 
 - Mind. ein Sonderzeichen 
 
-Bei drei falschen Anmeldeversuchen wird das System beendet. 
-Bei der Passwortänderung wird zusätzlich geprüft, dass neues Passwort ==! Altes Passwort ist.  
--->Rückführung zum Hauptmenü 
+Nach drei falschen Anmeldeversuchen wird das System automatisch beendet. Bei einer Passwortänderung wird zusätzlich geprüft, dass das neue Passwort ==! mit dem altem Passwort übereinstimmt.
+*--> Rückführung zum Hauptmenü*
 
-Hauptmenü:  
+**Hauptmenü:**
 Wenn User eine Option wählt, wird geprüft, ob die Eingabe (Option Nr.) existiert und der Datentyp stimmt. 
-Von App abmelden = System beenden 
+*Von App abmelden = System beenden*
 
-Budget-Kategorien: 
+**Budget-Kategorien:**
 Wenn User eine Kategorie bearbeiten will, wird geprüft, ob die Eingabe (Kategorie Nr.) existiert und der Datentyp stimmt.  
--->Rückführung zum Hauptmenü 
+*--> Rückführung zum Hauptmenü*
 
-Budgetlimit & Finanzziele: 
+**Budgetlimit & Finanzziele:** 
 Wenn User ein Limit/Ziel bearbeiten oder erstellen will, wird geprüft, ob die Eingabe (Kategorie Nr.) existiert und der Datentyp stimmt. 
--->Rückführung zum Hauptmenü 
+*--> Rückführung zum Hauptmenü*
 
-Budgetanalyse / Vergleich: 
+**Budgetanalyse / Vergleich:**
 Wenn User eine Kategorie mit dem Vormonat vergleichen will, wird geprüft, ob die Eingabe (Kategorie Nr.) existiert und der Datentyp stimmt. 
--->Rückführung zum Hauptmenü 
+*--> Rückführung zum Hauptmenü* 
 
 
 
-### 3. Dateiverarbeitung (Lesen und / oder Schreiben von Daten) 
+### 3. Dateiverarbeitung (Lesen & Schreiben von Daten) 
 
-Erst Eingabe: 
-Eingabe findet über die Konsole statt und der Output über CSV-File (.csv). Wir werden die CSV-Files selbst schreiben und folgendes werden sie enthalten: 
-- Ausgabetyp
-- Betrag
-- Monat & Jahr vom Kauf
+**Erst Eingabe:** 
+- Eingaben erfolgen über die Konsole.
+- Daten werden in einer JSON-Datei (`budget_daten.json`) gespeichert.
+- Standardkategorien wie Lebensmittel, Studium und Freizeit sind vordefiniert, können aber geändert werden.
 
-Spätere Bearbeitung (Manipulation): 
-Inputs via CSV-file.   
+Ausgabetyp
+Betrag
+Monat & Jahr vom Kauf
 
-Passwortverschlüsselung
-Das Passwort wird vor der Speicherung mit bcrypt gehasht. Dadurch stellen wir sicher, dass sensible Nutzerdaten auch bei einem Datenleck geschützt bleiben.
+**Spätere Bearbeitung (Manipulation):**
+- Beim Neustart der Anwendung wird die JSON-Datei eingelesen.
+- Alle Änderungen und Ergänzungen aus der vorherigen Nutzung (neue Kategorien, Einträge, Limits oder Ziele) werden automatisch geladen und stehen wieder zur Verfügung.
+- Dadurch bleibt der aktuelle Stand der Budgetverwaltung erhalten und kann weiter bearbeitet oder erweitert werden.
+
+**Passwortverschlüsselung:**
+- Das Passwort wird vor der Speicherung mit bcrypt gehasht. Dadurch stellen wir sicher, dass sensible Nutzerdaten auch bei einem Datenleck geschützt bleiben.
+
+
 
 ## ⚙️ Implementation
 
 ### Technology
-- Python 3.x
+- Python 3.13 *(29.11.2025)*
 - Environment: GitHub Codespaces
-- No external libraries
-
+- 1 externe Bibliotheken
 
 ### How to Run
 1. Open the repository in **GitHub Codespaces**
@@ -106,21 +106,31 @@ Das Passwort wird vor der Speicherung mit bcrypt gehasht. Dadurch stellen wir si
 	python3 main.py
 	```
 
+
 ### Libraries Used
 
-- bcrypt
-- weitere können noch folgen
+**Externe Bibliotheken:**
+- `bcrypt`: für die Passwortverschlüsselung eingesetzt. Das Passwort wird vor der Speicherung mit einem Hash versehen, sodass sensible Nutzerdaten auch bei einem Datenleck geschützt bleiben.
+Installation über `pip install bcrypt`.
 
-These libraries are part of the Python standard library, so no external installation is required. They were chosen for their simplicity and effectiveness in handling file management tasks in a console application.
+**Interne Bibliotheken:**
+- `json`: zum Speichern und Laden strukturierter Daten im JSON-Format (`budget_daten.json`).
+- `os`: für Betriebssystemfunktionen wie Pfadprüfung, Dateiexistenz und Programmbeendigung
+- `threading`: ermöglicht das Setzen von Timern für Inaktivitäts-Logout und parallele Abläufe
+- `sys`: Für Systemfunktionen wie das Beenden des Programms (`sys.exit`)
+
+Diese Bibliotheken wurden gewählt, da sie eine einfache und zugleich effiziente Lösung für Datei­verwaltungsaufgaben in einer Konsolenanwendung bieten.
+
 
 
 ## 👥 Team & Contributions
 
 | Name       | Contribution                                 |
 |------------|----------------------------------------------|
-| Student A  | Menu reading (file input) and displaying menu|
-| Student B  | Order logic and data validation              |
-| Student C  | Invoice generation (file output) and slides  |
+| Nina P.    | Passwort-Logik (Login, Validierung, Passwort ändern und speichern), Statistikteil (50%), README |
+| Paola P.   | Menüstruktur & Logik (Kategorien, Budgetlimits/Finanzziele,Validierung), JSON-Dateiverarbeitung (schreiben/lesen), Main-Funktion, README |
+| Sarah K.   | Inaktivitäts-Handling, Statistikteil (50%) |
+
 
 
 ## 🤝 Contributing
@@ -128,6 +138,8 @@ These libraries are part of the Python standard library, so no external installa
 - Use this repository as a starting point by importing it into your own GitHub account.  
 - Work only within your own copy — do not push to the original template.  
 - Commit regularly to track your progress.
+
+
 
 ## 📝 License
 
