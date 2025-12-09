@@ -107,7 +107,14 @@ Das Passwort wird vor der Speicherung mit bcrypt gehasht. Dadurch stellen wir si
 	```
 
 ### Libraries Used
-
+- json
+- os
+- threading
+- sys
+- re
+- matplotlib.pyplot
+- numpy 
+- base64
 - bcrypt
 - weitere können noch folgen
 
