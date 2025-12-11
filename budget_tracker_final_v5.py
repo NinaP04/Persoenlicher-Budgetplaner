@@ -1058,7 +1058,11 @@ def plot_monats_summen_pro_kategorie(kategorien_daten, budget_limits=None):
                 limit = budget_limits[kategorie]
                 # Zeichne die Linie nur in dem Bereich dieser Kategorie
                 ax.plot([i - width - 0.1, i + width + 0.1], [limit, limit],
-                        color='orange', linestyle='--', alpha=0.7, linewidth=1.5)
+                        color='#D2691E', linestyle='--', alpha=0.8, linewidth=1.5)
+                # Füge die Beschriftung des Budgetlimits oberhalb der Linie hinzu
+                formatted_limit = f"{limit:,.2f}".replace(",", "'")
+                ax.text(i - 0.25, limit, formatted_limit, fontsize=9,
+                        color='#D2691E', va='bottom', ha='center', fontweight='bold')
 
     # Werte über den Balken annotieren und Delta (Aktuell - Vormonat)
     for i, bar in enumerate(bars_curr):
