@@ -197,7 +197,7 @@ def plot_monats_summen_pro_kategorie(kategorien_daten, budget_limits=None):
 
         delta = curr_values[i] - prev_values[i]
         delta_text = f"{delta:+.2f}"
-        delta_color = 'green' if delta <= 0 else 'red'
+        delta_color = 'purple'
         ax.annotate(
             delta_text,
             xy=(bar.get_x() + bar.get_width() / 2, h + max(0.5, 0.02 * h)),
@@ -458,3 +458,4 @@ def statistik_menü(budget_kategorien, budget_limits, finanzziele, timed_input):
 
         else:
             print("\n\033[31mAchtung: Ungültige Nummer!\033[0m")
+
