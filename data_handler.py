@@ -101,7 +101,7 @@ def daten_laden():
             budget_limits = daten.get("budget_limits", {})
             finanzziele = daten.get("finanzziele", {})
             benutzer_passwort = daten.get(
-                "benutzer_passwort", {"passwort": hash_passwort("Test1234")})
+                "benutzer_passwort", {"passwort": hash_passwort("Test1234!")})
 
             # Migration: Falls Passwort noch nicht gehashed ist
             stored_pass = benutzer_passwort.get("passwort")
@@ -143,3 +143,4 @@ def daten_speichern(budget_kategorien,
     }
     with open(DATEN_DATEI, "w", encoding="utf-8") as f:
         json.dump(daten, f, indent=4, ensure_ascii=False)
+
