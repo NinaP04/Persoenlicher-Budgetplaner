@@ -116,7 +116,7 @@ def daten_laden():
         budget_kategorien = STANDARD_KATEGORIEN.copy()
         budget_limits = {}
         finanzziele = {}
-        benutzer_passwort = {"passwort": hash_passwort("Test1234")}
+        benutzer_passwort = {"passwort": hash_passwort("Test1234!")}
 
     return budget_kategorien, budget_limits, finanzziele, benutzer_passwort
 
@@ -143,4 +143,5 @@ def daten_speichern(budget_kategorien,
     }
     with open(DATEN_DATEI, "w", encoding="utf-8") as f:
         json.dump(daten, f, indent=4, ensure_ascii=False)
+
 
