@@ -85,10 +85,11 @@ def inaktivität_wrapper(timeout, daten_speichern_func):
             raise SystemExit(0)
 
         except Exception as e:
-        timer.cancel()
-        print(f"\n\nUnerwarteter Fehler bei der Eingabe: {e}")
-        daten_speichern()
-        raise SystemExit(1)
+            timer.cancel()
+            print(f"\n\nUnerwarteter Fehler bei der Eingabe: {e}")
+            daten_speichern()
+            raise SystemExit(1)
         
     return timed_input_func
+
 
