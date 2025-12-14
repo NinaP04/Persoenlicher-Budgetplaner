@@ -92,9 +92,9 @@ Durch einen persönlicher Budget-Planner in App-Format kann man ganz einfach und
 
 ### Technologie
 
-- Python 3.13 *(29.11.2025)*
+- Python 3.13
 - Environment: GitHub Codespaces
-- 3 externe Bibliotheken (letzte Versionen Stand 13.12.2025)
+- 3 externe Bibliotheken (die letzten Versionen -> jeweils Stand 13.12.2025)
 
 ### Ausführung
 
