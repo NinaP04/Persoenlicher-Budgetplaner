@@ -47,13 +47,13 @@ Durch einen persönlicher Budget-Planner in App-Format kann man ganz einfach und
 ### 2. Validierung von Daten (Prüfung von Eingabedaten auf Datentyp oder Format)
 
 - **Passwort setzten:** Bei einer Passwortänderung wird zusätzlich geprüft, dass das neue Passwort ==! mit dem altem Passwort übereinstimmt. <br> Komplexitätsvorgaben für das Passwort sind:
-    - MMindestens 8 Zeichen
+    - Mindestens 8 Zeichen
     - Maximal 20 Zeichen
     - Mindestens ein Grossbuchstabe
     - Mindestens ein Kleinbuchstabe
     - Mindestens eine Zahl
     - Mindestens ein Sonderzeichen: `$, @, #, %, !, ?, &, *` <br>
-` `
+
 
 - **Anmeldeversuchen:** Nach drei falschen Anmeldeversuchen wird das System automatisch beendet. <br>
 *--> Von App abmelden = System beenden*
