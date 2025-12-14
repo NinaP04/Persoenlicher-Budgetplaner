@@ -127,25 +127,25 @@ Diese Bibliotheken wurden gewählt, da sie eine einfache und zugleich effiziente
 
 ```text
 budget-tracker/
-├─ `README.md`               # Projektdokumentation (Diese Datei)
-├─ `main.py`                 # Programmeinstieg (Startet das Login und Hauptmenü.)
-├─ `config.py`               # Konstanten und Standardwerte (Standard-Kategorien, Maximale Budgetlimits, Passwort-Sonderzeichen, Dateiname für Datenspeicher)
-├─ `daten_manager.py`        # Verwaltet das Laden und Speichern von JSON-Daten.
-├─ `passwort_manager.py`     # Passwort-bezogenen Funktionen (Login, Passwort ändern & Validierung)
-├─ `kategorie_manager.py`    # Kategorienverwaltung (Anzeigen, Umbenennen, Hinzufügen, Bearbeiten, Löschen, Einträge hinzufügen/löschen)
-├─ `utils.py`                # Hilfsfunktionen (Inaktivitäts-Timer, Betrags-Validierung, Listen-Anzeige)
-└─ `finanz_manager.py`       # Finanzkontrolle (Budgetlimits setzen/ändern/löschen, Finanzziele definieren/ändern/löschen)
+├── `README.md`              # Projektbeschreibung, Installationsanleitung und Nutzungshinweise (diese Datei).
+├── `main.py`                # Login, Menüführung und zentrale Steuerung.
+├── `statistic.py`           # Statistische Visusliserung mit Balkendiagramme.
+├── `financ_control`         # Budgetlimits und Finanzziele setzen, ändern, löschen.
+├── `category_manager.py`    # Anzeigen, Umbenennen, Hinzufügen, Bearbeiten, Löschen von Kategorien.
+├── `utils.py`               # Inaktivitäts-Timer mit Logout, Validierung (Betrag & Datum).
+├── `daten_handler.py`       # Konstanten und Standardwerte (Standard-Kategorien, Maximale Budgetlimits etc.), das Erstellen, Laden und Speichern der JSON-Daten.
+└── `auth.py`                # Passwort-Hashing, Login, Passwort ändern und Validierung.
 ```
 
 ## 👥 Team & Contributions
 ---
 
 
-| Name       | Contribution                                                                                                                             |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Nina P.    | Passwort-Logik (Login, Validierung, Passwort ändern und speichern), Statistikteil (50%), README                                          |
-| Paola P.   | Menüstruktur & Logik (Kategorien, Budgetlimits/Finanzziele,Validierung), JSON-Dateiverarbeitung (schreiben/lesen), Main-Funktion, README |
-| Sarah K.   | Inaktivitäts-Handling, Statistikteil (50%)                                                                                               |
+| Name       | Contribution                                                                                                                                                 |
+|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Nina P.    | Passwort-Logik (Login, Validierung, Passwort ändern und speichern), Statistikteil-Visualisierung, README (Aufsetzung)                                        |
+| Paola P.   | Menüstruktur & Logik (Kategorien, Budgetlimits/Finanzziele,Validierung), JSON-Dateiverarbeitung (schreiben/lesen), Main-Funktion, README (Weiterbearbeitung) |
+| Sarah K.   | Inaktivitäts-Handling, Statistikteil-Datenverarbeitung                                                                                                       |
 
 ## 🤝 Contributing
 ---
