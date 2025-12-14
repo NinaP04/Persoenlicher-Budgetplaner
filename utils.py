@@ -81,15 +81,16 @@ def inaktivität_wrapper(timeout, daten_speichern_func):
         except (KeyboardInterrupt, EOFError):
             timer.cancel()
             print("\n\nEingabe abgebrochen (Ctrl+C/EOF).")
-            daten_speichern()
+            daten_speichern_func()
             raise SystemExit(0)
 
         except Exception as e:
             timer.cancel()
             print(f"\n\nUnerwarteter Fehler bei der Eingabe: {e}")
-            daten_speichern()
+            daten_speichern_func()
             raise SystemExit(1)
         
     return timed_input_func
+
 
 
